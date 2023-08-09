@@ -6,9 +6,10 @@
 //4. Define a coupon function 
     //If the customer has a coupon, the customer will receive a $10 discount after the subscription discount has been calculated.
 //5. Define a checkout function
-    //If the customer has a subscription, call the subscription functin
+    //If the customer has a subscription, call the subscription function
     //If the customer has a coupon, call the coupon function
-    //console.log (“Your grand total is ${finalAmount}.”)  per customer 
+    //!! IF both, call both functions 
+    //console.log (“Your grand total is ${finalAmount}.”) per customer 
 
 //1. Objects 
 
@@ -39,7 +40,7 @@ function refillTotal(pricePerRefill, refills) {
     return pricePerRefill * refills;
 }
 
-console.log(refillTotal(25, 3))
+// console.log(refillTotal(30, 5))
 
 //3. subscription function
 
@@ -52,7 +53,7 @@ function subscription(customer){
     }
 }
 
-console.log(subscription(rocky))
+// console.log(subscription(rocky))
 
 //4. addCoupon function
 function addCoupon(customer){
@@ -63,11 +64,26 @@ function addCoupon(customer){
         return subscriptionAmount;
     }
 } 
-console.log(addCoupon(rocky))
+
+// console.log(addCoupon(rocky))
 
 
-//5. Checkout function 
+//5. checkout function 
 function checkout (customer){
-   if (customer.coupon)
+    if (customer.subscription && customer.coupon){
+        return subscription, addCoupon(customer)
+   }
+     else if (customer.subscription) {
+        return subscription(customer)
+   } else if (customer.coupon) {
+        return addCoupon(customer)
+   } else {
+        return refillTotal(customer.pricePerRefill, customer.refills)
+   }
 }
 
+
+console.log("Your grand total is "+ "$ " + checkout(timmy))
+console.log("Your grand total is "+ "$ " + checkout(sarah))
+console.log("Your grand total is "+ "$ " + checkout(rocky))
+ 
