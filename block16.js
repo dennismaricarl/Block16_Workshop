@@ -83,7 +83,7 @@ function checkout (customer){
 }
 
 
-console.log("Your grand total is "+ "$ " + checkout(timmy))
-console.log("Your grand total is "+ "$ " + checkout(sarah))
-console.log("Your grand total is "+ "$ " + checkout(rocky))
+console.log("Your grand total is "+ "$" + checkout(timmy))
+console.log("Your grand total is "+ "$" + checkout(sarah))
+console.log("Your grand total is "+ "$" + checkout(rocky))
  
