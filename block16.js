@@ -71,14 +71,14 @@ function addCoupon(customer){
 //5. checkout function 
 function checkout (customer){
     if (customer.subscription && customer.coupon){
-        return subscription, addCoupon(customer)
+        return subscription(customer), addCoupon(customer)
    }
      else if (customer.subscription) {
         return subscription(customer)
    } else if (customer.coupon) {
         return addCoupon(customer)
    } else {
-        return refillTotal(customer.pricePerRefill, customer.refills)
+        return refillTotal(customer.pricePerRefill, customer.refills);
    }
 }
 
