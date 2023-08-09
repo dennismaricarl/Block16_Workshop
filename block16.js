@@ -53,6 +53,7 @@ function subscription(customer){
     }
 }
 
+// console.log(subscription(sarah))
 // console.log(subscription(rocky))
 
 //4. addCoupon function
